@@ -11,12 +11,10 @@ public:
                 nextGreater[st.top()] = i;
                 st.pop();
             }
-            
             st.push(i);
         }
         
         vector<int> ans;
-        
         for (int &i : nums1)
             ans.push_back( nextGreater.count(i) ? nextGreater[i] : -1 );
         
