@@ -25,8 +25,7 @@ public:
         l /= 2;
         
         while (l--)
-            head = head->next;
-        
+            head = head->next;        
         return head;
     }
 };
