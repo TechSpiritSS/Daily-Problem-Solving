@@ -8,16 +8,16 @@ public:
         for (int i = people.size() - 1, j = 0; i >= j; --i)
         {
             if (i == j)
-                ans += 1;
+                ++ans;
             
             else if (people[i] + people[j] <= limit)
             {
-                ans += 1;
+                ++ans;
                 ++j;
             }
             
             else
-                ans += 1;
+                ++ans;
         }
         
         return ans;
