@@ -12,7 +12,7 @@ class Solution {
     int count(ListNode* head)
     {
         int c = 0;
-        while(head)
+        while (head)
         {
             c++;
             head = head->next;
@@ -24,8 +24,9 @@ public:
         int l = count(head);
         l /= 2;
         
-        while(l--)
+        while (l--)
             head = head->next;
+        
         return head;
     }
 };
