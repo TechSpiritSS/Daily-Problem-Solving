@@ -24,7 +24,7 @@ public:
         
         for (int i = bin.size() - 1; i >= 0; --i)
         {
-            ans += ((bin[i] - '0' )* pow);
+            ans += (bin[i] - '0' )* pow;
             pow *= 2;
         }
         
