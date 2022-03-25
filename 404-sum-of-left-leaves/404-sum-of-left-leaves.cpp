@@ -20,8 +20,7 @@ public:
             ans += root -> left -> val;
         
         sumOfLeftLeaves(root -> left);
-        sumOfLeftLeaves(root -> right);
-        
+        sumOfLeftLeaves(root -> right);      
         return ans;
     }
 };
