@@ -30,7 +30,7 @@ public:
             case 3:
                 if (s)
                 {
-                    s--;
+                    --s;
                     return true;
                 }
                 return false;
