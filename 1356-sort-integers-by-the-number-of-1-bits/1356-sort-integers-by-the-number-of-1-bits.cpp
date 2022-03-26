@@ -3,6 +3,7 @@ class Solution {
     static int bits(int x)
     {
         int count = 0;
+        
         while (x)
         {
             if (x & 1)
