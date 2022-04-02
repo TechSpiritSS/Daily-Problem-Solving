@@ -15,7 +15,8 @@ public:
     }
     
     bool validPalindrome(string s) {
-        int start = 0, end = s.size() - 1;
+        int start = 0;
+        int end = s.size() - 1;
         
         while (start < end)
         {
