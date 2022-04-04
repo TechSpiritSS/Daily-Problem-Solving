@@ -34,6 +34,7 @@ public:
         
         s1 = tmp;
         tmp = head;
+        
         while (back)
         {
             --back;
