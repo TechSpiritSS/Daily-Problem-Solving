@@ -3,6 +3,7 @@ public:
     int mySqrt(int x) {
         if (x < 2)
             return x;
+        
         long long int l = 2, h = x, m;
         int ans = 1;
         
