@@ -10,16 +10,16 @@ using namespace std;
 class Solution {
   public:
     long long int pow(long long int a, long long int b, long long int p) {
-    	long long int res = 1;
+    	long long int ans = 1;
     	a %= p;
-    	while (b) 
+    	while (b)
     	{
-    		if (b & 1)
-    		    res = (res * a) % p;
-    		b = b >> 1;
-    		a = (a * a) % p;
+    	    if (b & 1)
+    	        ans = (ans * a) % p;
+    	   b >>= 1;
+    	   a = (a * a) % p;
     	}
-    	return res;
+    	return ans;
     }
     
     long long karyTree(int k, int m) {
