@@ -47,7 +47,7 @@ class Solution {
             {
                 v[r][i] = 'Q';
                 solve(r + 1, v, n);
-                v[r][i]='.';
+                v[r][i] = '.';
             }
         }
     }
