@@ -56,7 +56,6 @@ public:
     vector<vector<string>> solveNQueens(int n) 
     {
         vector<string> v(n, string (n, '.'));
-
         solve( 0, v, n);
         return ans;
     }
