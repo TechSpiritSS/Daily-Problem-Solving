@@ -3,7 +3,7 @@ class Solution {
 
     bool isSafe(int r, int c, vector<string> &v, int n)
     {
-        for (int i = 0;i <= r; ++i)
+        for (int i = 0; i <= r; ++i)
             if (v[i][c] =='Q') 
                 return false;
     
