@@ -1,8 +1,7 @@
 class Solution {
     bool palindrome(string s)
     {
-        int n = s.size() - 1;
-        for (int i = 0, j = n; i < j; ++i, --j)
+        for (int i = 0, j = s.size() - 1; i < j; ++i, --j)
             if (s[i] != s[j])
                 return false;
         return true;
