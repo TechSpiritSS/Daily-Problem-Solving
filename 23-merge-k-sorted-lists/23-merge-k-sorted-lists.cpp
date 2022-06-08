@@ -9,30 +9,38 @@
  * };
  */
 class Solution {
-public:
-    ListNode* mergeKLists(vector<ListNode*>& lists) {
-        vector<int> all;
+    ListNode* merge(ListNode* l1, ListNode* l2)
+    {
+        if (!l1)
+            return l2;
+        if (!l2)
+            return l1;
         
-        for (auto &i : lists)
-            while (i)
-            {
-                all.push_back(i -> val);
-                i = i -> next;
-            }
-        
-        sort(all.begin(), all.end());
-        
-        if (all.size() < 1)
-            return NULL;
-        ListNode* ans = new ListNode(all[0]);
-        ListNode* tmp = ans;
-        
-        for (int i = 1; i < all.size(); ++i)
+        if (l1 -> val < l2 -> val)
         {
-            tmp -> next = new ListNode(all[i]);
-            tmp = tmp -> next;
+            l1 -> next = merge(l1 -> next, l2);
+            return l1;
         }
         
-        return ans;
+        l2 -> next = merge(l2 -> next, l1);
+        return l2;
+    }
+    
+    ListNode* mergedKLists(vector<ListNode*> &lists, int l, int r)
+    {
+        if (l > r)
+            return NULL;
+        if (l == r)
+            return lists[l];
+        
+        int m = (l + r) / 2;
+        
+        ListNode* m1 = mergedKLists(lists, l, m), *m2 = mergedKLists(lists, m + 1, r);
+        return merge(m1, m2);
+    }
+    
+public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        return mergedKLists(lists, 0, lists.size() - 1);
     }
 };
