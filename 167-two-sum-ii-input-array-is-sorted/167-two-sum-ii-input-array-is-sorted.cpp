@@ -21,6 +21,7 @@ public:
     vector<int> twoSum(vector<int>& numbers, int target) {
         int s = numbers.size();
         vector<int> ans;
+        
         for(int i = 0; i < s; ++i)
         {
             int x = binarySearch(numbers, target - numbers[i], i + 1);
