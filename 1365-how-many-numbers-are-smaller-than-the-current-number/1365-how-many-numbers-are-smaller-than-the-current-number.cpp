@@ -9,13 +9,11 @@ public:
         for (int i = 1; i < 101; ++i)
             count[i] += count[i - 1];
         
-        vector<int> ans;
+        vector<int> ans(nums.size());
         
-        for (auto &i : nums)
-            if (i > 0)
-                ans.push_back(count[i - 1]);
-            else
-                ans.push_back(0);
+        for (int i = 0; i < nums.size(); ++i)
+            if (nums[i] > 0)
+                ans[i] = count[nums[i] - 1];
         
         return ans;
     }
