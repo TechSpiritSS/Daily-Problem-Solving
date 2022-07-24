@@ -22,12 +22,11 @@ class Solution {
 public:
     vector<int> preorder(Node* root) {
         vector<int> ans;
+        stack<Node*> st;
         
         if (!root)
             return ans;
-        
-        stack<Node*> st;
-        
+                
         st.push(root);
         
         while (!st.empty())
