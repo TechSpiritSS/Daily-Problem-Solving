@@ -30,10 +30,8 @@ public:
                 TreeNode* r = q.front();
                 q.pop();
                 
-                if (r -> left)
-                    q.push(r -> left);
-                if (r -> right)
-                    q.push(r -> right);
+                if (r -> left) q.push(r -> left);
+                if (r -> right) q.push(r -> right);
                 
                 x.push_back(r -> val);
             }   
