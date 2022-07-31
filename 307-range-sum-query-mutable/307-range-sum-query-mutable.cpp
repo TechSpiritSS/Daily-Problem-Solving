@@ -17,12 +17,13 @@ public:
     }
     
     int sumRange(int left, int right) {
-        int res = sum; 
-        for (int i = 0; i < left; ++i)
-            res -= v[i];
+        int res;
         
-        for (int i = right + 1; i < v.size(); ++i)
-            res -= v[i];
+        if (right - left < v.size() / 2)
+            res = accumulate(v.begin() + left, v.begin() + right + 1, 0);
+        
+        else
+            res = sum - accumulate(v.begin(), v.begin() + left, 0) - accumulate(v.begin() + right + 1, v.end(), 0);
         
         return res;
     }
