@@ -2,6 +2,7 @@ class NumArray {
 public:
     vector<int> v;
     int sum;  
+    
     NumArray(vector<int>& nums) {
         v = nums;
         sum = 0;
@@ -17,7 +18,7 @@ public:
     }
     
     int sumRange(int left, int right) {
-        int res;
+        int res = 0;
         
         if (right - left < v.size() / 2)
             res = accumulate(v.begin() + left, v.begin() + right + 1, 0);
