@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<string> topKFrequent(vector<string>& words, int k) {
         unordered_map<string, int> f;
-        
         for (auto &s : words) ++f[s];
         
         sort(words.begin(), words.end(), [&f](string &a, string&b)
