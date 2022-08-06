@@ -14,33 +14,19 @@ public:
         if (!head || !head -> next)
             return head;
         
-        ListNode* odd = new ListNode(-1);
-        ListNode* even = new ListNode(-1);
-        ListNode* oh = odd;
+        ListNode *odd = head;
+        ListNode* even = head -> next;
         ListNode* eh = even;
-        bool flag = true;
         
-        while (head)
+        while (even && even -> next)
         {
-            if (flag)
-            {
-                odd -> next = head;
-                odd = odd -> next;
-            }
-            else
-            {
-                even -> next = head;
-                even = even -> next;
-            }
-            
-            flag = !flag;
-            head = head -> next;
+            odd -> next = even -> next;
+            odd = odd -> next;
+            even -> next = odd -> next;
+            even = even -> next;
         }
-
-        head = oh -> next;
-        odd -> next = eh -> next;
-        even -> next = NULL;
-
+        
+        odd -> next = eh;
         return head;
     }
 };
