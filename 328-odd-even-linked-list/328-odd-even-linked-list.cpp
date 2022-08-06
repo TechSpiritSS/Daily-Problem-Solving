@@ -25,7 +25,6 @@ public:
             even -> next = odd -> next;
             even = even -> next;
         }
-        
         odd -> next = eh;
         return head;
     }
