@@ -44,11 +44,8 @@ class Solution {
             tmp = tmp -> next;
         }
         
-        if (l)
-            tmp -> next = l;
-        else
-            tmp -> next = r;
-        
+        if (l) tmp -> next = l;
+        else tmp -> next = r;
         return head -> next;
     }
     
