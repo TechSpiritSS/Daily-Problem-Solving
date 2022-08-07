@@ -8,7 +8,7 @@ u - a
 
 a = e + u + i
 e = a + i
-i = a + e
+i = e + o
 o = i
 u = i + o
 
