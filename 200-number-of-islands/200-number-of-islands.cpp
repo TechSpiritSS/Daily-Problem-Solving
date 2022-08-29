@@ -4,8 +4,7 @@ class Solution {
          if (i < 0 || i >= row || j < 0 || j >= col || grid[i][j] == '0') 
              return;
         
-        grid[i][j] = '0';
-        
+        grid[i][j] = '0'; 
         dfs(i - 1, j, grid, row, col);
         dfs(i + 1, j, grid, row, col); 
         dfs(i, j - 1, grid, row, col);
