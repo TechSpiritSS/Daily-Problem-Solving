@@ -1,47 +1,24 @@
 class Solution {
 public:
     vector<int> findOriginalArray(vector<int>& changed) {
-        map<int, int> frq;
-        
-        sort(changed.begin(), changed.end());
-
-		for (int i = 0; i < changed.size(); ++i)
-			++frq[changed[i]];
-
+        if (changed.size() % 2) return {};
+		sort(changed.begin(), changed.end());
 		vector<int> ans;
+		map<int, int> frq;
 
-		for (int i = 0; i < changed.size(); ++i)
+		for (auto &i : changed)
+			++frq[i];
+
+		for (auto &i : changed)
 		{
-            if (changed[i] == 0 && frq[changed[i]] % 2)
-                return {};
-			if (changed[i] % 2)
-			{
-				if (frq[changed[i] && frq[changed[i] * 2]])
-				{
-					ans.push_back(changed[i]);
-					--frq[changed[i]];
-					--frq[changed[i] * 2];
-				}
-            }
-			else
-			{
-				if (frq[changed[i] / 2] && frq[changed[i]])
-				{
-					ans.push_back(changed[i] / 2);
-					--frq[changed[i]];
-					--frq[changed[i] / 2];
-				}
-				else if (frq[changed[i] * 2] && frq[changed[i]])
-				{
-					ans.push_back(changed[i]);
-					--frq[changed[i]];
-					--frq[changed[i] * 2];
-				}
-            }
+			if (frq[i] == 0) continue;
+			--frq[i]; 
+            
+            if (frq[i * 2] == 0) return {};
+			--frq[i * 2];
+            
+			ans.push_back(i);
 		}
-
-		if (ans.size() * 2 == changed.size())
-			return ans;
-		return {};
+		return ans;
     }
 };
