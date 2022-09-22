@@ -15,19 +15,14 @@ public:
 					if (nums[l] + nums[h] == sum)
 					{
 						ans.push_back({nums[i], nums[l], nums[h]});
-						while (l < h && nums[l] == nums[l + 1])
-							++l;
-
-						while (l < h && nums[h] == nums[h - 1])
-							--h;
+						while (l < h && nums[l] == nums[l + 1]) ++l;
+						while (l < h && nums[h] == nums[h - 1]) --h;
 
 						++l;
 						--h;
 					}
-					else if (nums[l] + nums[h] < sum)
-						++l;
-					else
-						--h;
+					else if (nums[l] + nums[h] < sum) ++l;
+					else --h;
 				}
 			}
 		}
