@@ -2,9 +2,8 @@ class Solution {
 public:
     string countAndSay(int n) {
         if (n == 1) return "1";
-        string s = "11";
-
-        for (int i = 3; i <= n; ++i)
+        string s = "1";
+        for (int i = 2; i <= n; ++i)
         {
             string tmp = "";
             s = s + ':';
