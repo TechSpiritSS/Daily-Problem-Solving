@@ -3,22 +3,17 @@ class Solution {
     {        
         for (auto &r : g)
         {
-            if (i < 0 || i > r.size())
-                return false;
+            if (i < 0 || i > r.size()) return false;
             
             if (r[i] == 1)
             {
-                if (i + 1 >= r.size() || r[i + 1] == -1)
-                    return -1;
-                else
-                    ++i;
+                if (i + 1 >= r.size() || r[i + 1] == -1) return -1;
+                else ++i;
             }
             else if (r[i] == -1)
             {
-                if (i == 0 || r[i - 1] == 1)
-                    return -1;
-                else
-                    --i;
+                if (i == 0 || r[i - 1] == 1) return -1;
+                else --i;
             }
         }
         return i;
