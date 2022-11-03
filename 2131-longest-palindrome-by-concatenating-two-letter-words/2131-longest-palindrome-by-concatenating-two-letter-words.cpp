@@ -6,10 +6,8 @@ public:
         
         for (auto &s : words)
         {
-            if (s[0] == s[1])
-               ++same[s]; 
-            else
-                ++diff[s];
+            if (s[0] == s[1]) ++same[s]; 
+            else ++diff[s];
         }
         
         string tmp;
@@ -25,8 +23,7 @@ public:
             }
         }
         
-        if (max % 2)
-            ans += 2;
+        if (max % 2) ans += 2;
         else
             for (auto &i : same)
                 if (i.first != tmp && i.second % 2)
