@@ -15,13 +15,13 @@ class Solution {
     void dfs(TreeNode* r, string s)
     {
         if (!r) return;
-        s += to_string(r -> val);        
         if (!r -> left && !r -> right)
         {
+            s += to_string(r -> val);        
             ans.push_back(s);
             return;
         }        
-        s += "->";
+        s += to_string(r -> val) + "->";
         dfs(r -> left, s);
         dfs(r -> right, s);
     }
