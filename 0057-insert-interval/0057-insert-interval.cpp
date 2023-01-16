@@ -16,7 +16,6 @@ public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
         vector<vector<int>> ans;
         solve(intervals, newInterval);
-        
         for (int i = 0; i < intervals.size(); ++i)
         {
             vector<int> curr = {intervals[i][0], intervals[i][1]};
