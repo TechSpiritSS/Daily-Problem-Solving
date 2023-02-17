@@ -10,24 +10,21 @@
  * };
  */
 class Solution {
-    vector<int> v;
+    int ans = INT_MAX;
+    TreeNode* p = NULL;
     
-    void bfs(TreeNode* r)
+    void inorder(TreeNode* r)
     {
         if (!r) return;
-        v.push_back(r -> val);
-        bfs(r -> left);
-        bfs(r -> right);
+        inorder(r -> left);
+        if (p) ans = min(ans, r -> val - p -> val);
+        p = r;
+        inorder(r -> right);
     }
     
 public:
-    int minDiffInBST(TreeNode* root) { 
-        int ans = INT_MAX;
-        bfs(root);
-        
-        sort(v.begin(), v.end());
-        for (int i = 1; i < v.size(); ++i)
-            ans = min(v[i] - v[i - 1], ans);
+    int minDiffInBST(TreeNode* root) {
+        inorder(root);
         return ans;
     }
 };
