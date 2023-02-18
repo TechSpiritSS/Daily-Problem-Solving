@@ -14,13 +14,13 @@ class Solution {
     {
         if (!L && !R) return true;
         if (!L || !R) return false;
-        if (L->val != R->val) return false;
-        return check(L->left, R->right) && check(L->right, R->left);
+        if (L -> val != R -> val) return false;
+        return check(L -> left, R -> right) && check(L -> right, R -> left);
             
     }
 public:
     bool isSymmetric(TreeNode* root) {
-        if(!root) return true;
-        return check(root->left, root->right);
+        if (!root) return true;
+        return check(root -> left, root -> right);
     }
 };
