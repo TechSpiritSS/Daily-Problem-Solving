@@ -9,20 +9,25 @@
  */
 
 class Solution {
-    TreeNode* ans = NULL;
+    TreeNode *ans = NULL;
     
-    bool sol(TreeNode *r, TreeNode *p, TreeNode* q) {
+    bool solve(TreeNode *r, TreeNode *p, TreeNode *q)
+    {
         if (!r) return false;
-        bool left = sol(r -> left, p, q);
-        bool right = sol(r -> right, p, q);
+        
+        bool left = solve(r -> left, p, q);
+        bool right = solve(r -> right, p, q);
         bool mid = (r == p || r == q);
-        if ((left && right) || (mid && left) || (mid && right)) ans = r;
+        
+        if ((left && right) || (mid && left) || (mid && right))
+            ans = r;
+        
         return mid || right || left;
     }
     
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        sol(root, p, q);
+        solve(root, p, q);
         return ans;
     }
 };
