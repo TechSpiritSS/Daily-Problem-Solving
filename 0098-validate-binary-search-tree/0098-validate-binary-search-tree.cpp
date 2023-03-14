@@ -10,16 +10,16 @@
  * };
  */
 class Solution {
-    bool sol(TreeNode* r, TreeNode* min, TreeNode* max)
+    bool solve(TreeNode *r, TreeNode *min, TreeNode *max)
     {
         if (!r) return true;
         if (min && r -> val <= min -> val) return false;
         if (max && r -> val >= max -> val) return false;
-        return sol(r -> left, min, r) && sol(r -> right, r, max);            
+        return solve(r -> left, min, r) && solve(r -> right, r, max);
     }
     
 public:
     bool isValidBST(TreeNode* root) {
-        return sol(root, NULL, NULL);
+        return solve(root, NULL, NULL);
     }
 };
