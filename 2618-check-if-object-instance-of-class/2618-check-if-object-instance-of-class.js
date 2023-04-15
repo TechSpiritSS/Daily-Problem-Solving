@@ -1,0 +1,18 @@
+/**
+ * @param {Object} object
+ * @param {Function} classFunction
+ * @return {boolean}
+ */
+var checkIfInstanceOf = function(obj, classFunction) {
+    while (obj != null)
+    {
+        if (classFunction == obj.constructor) return true;
+        obj = Object.getPrototypeOf(obj);
+    }
+    
+    return false;
+};
+
+/**
+ * checkIfInstanceOf(new Date(), Date); // true
+ */
