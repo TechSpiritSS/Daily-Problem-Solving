@@ -1,8 +1,8 @@
-<h2><a href="https://leetcode.com/problems/flatten-deeply-nested-array/">2625. Flatten Deeply Nested Array</a></h2><h3>Medium</h3><hr><div><p>Write a function that accepts a <strong>multi-dimensional</strong> array&nbsp;<code>arr</code>&nbsp;and a depth <code>n</code>, and returns a&nbsp;<strong>flattened</strong>&nbsp;version of that array.</p>
+<h2><a href="https://leetcode.com/problems/flatten-deeply-nested-array/">2625. Flatten Deeply Nested Array</a></h2><h3>Medium</h3><hr><div><p>Given a&nbsp;<strong>multi-dimensional</strong> array&nbsp;<code>arr</code>&nbsp;and a depth <code>n</code>, return&nbsp;a&nbsp;<strong>flattened</strong>&nbsp;version of that array.</p>
 
 <p>A <strong>multi-dimensional</strong>&nbsp;array is a recursive data structure that contains integers or other&nbsp;<strong>multi-dimensional</strong>&nbsp;arrays.</p>
 
-<p>A&nbsp;<strong>flattened</strong>&nbsp;array is a version of that array with some or all of the sub-arrays removed and replaced with the actual elements in that sub-array. This flattening operation should only be done if the current depth of nesting&nbsp;is greater than&nbsp;<code>n</code>. The depth of the elements in the first array are considered to be&nbsp;0.</p>
+<p>A&nbsp;<strong>flattened</strong>&nbsp;array is a version of that array with some or all of the sub-arrays removed and replaced with the actual elements in that sub-array. This flattening operation should only be done if the current depth of nesting&nbsp;is less&nbsp;than&nbsp;<code>n</code>. The depth of the elements in the first array are considered to be&nbsp;<code>0</code>.</p>
 
 <p>Please solve it without the built-in&nbsp;<code>Array.flat</code> method.</p>
 
