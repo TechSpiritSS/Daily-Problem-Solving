@@ -11,11 +11,12 @@ public:
         for (int i = 0; i < l; ++i)
         {
             auto f = m.find(target - nums[i]);
-            if (f != m.end() && f->second != i)
+            
+            if (f != m.end() && f -> second != i)
             {
                 res.push_back(i);
                 res.push_back(f -> second);
-                break;
+                return res;
             }
         }
         return res;
